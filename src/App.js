@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 // import { Button, List } from 'antd-mobile';
 import { Button } from 'antd-mobile';
 import { connect } from 'react-redux';
-import {addGun, removeGun, addGunAsync} from './index';
+import {addGun, removeGun, addGunAsync} from './index.redux';
 
 // class App extends Component {
 //   render() {
@@ -88,7 +88,7 @@ import {addGun, removeGun, addGunAsync} from './index';
 // 写法二
 @connect(
   // 将需要state的属性放到props里
-  state => ({num: state}),
+  state => ({num: state.counter}),
   // 将需要的方法放到props里, 且自动dispatch 注意这里是定义对象的简写方式
   { addGun, removeGun, addGunAsync }
 )
