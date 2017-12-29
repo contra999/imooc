@@ -8,11 +8,13 @@ app.get('/', (req, res) => {
 
 app.get('/data', (req, res) => {
     res.json({
-        name: 'imooc recat',
-        type: 'it'
+        user: '张德标',
+        age: 25
     });
 })
 
 app.listen(9093, () => {
     console.log('Node app start at port 9093');
 })
+
+// TODO: 说好的MongoDB的介绍

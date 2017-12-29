@@ -16,6 +16,7 @@ import {
 import reducers from './reducer';
 import Auth from './Auth';
 import Dashboard from './Dashboard';
+import './config';
 
 // 链接redux调试工具
 const reduxDevtools = window.devToolsExtension ? window.devToolsExtension() : f=>f;
@@ -40,7 +41,7 @@ ReactDOM.render(
             <Switch>
                 <Route path='/login' component={Auth} />
                 <Route path='/dashboard' component={Dashboard} />
-                {/* 访问其他页面, 统一跳转到此页面 */}
+                {/* 如果上面都没命中,默认跳转到dashboard */}
                 <Redirect to='/dashboard' />
             </Switch>
         </BrowserRouter>
