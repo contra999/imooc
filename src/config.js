@@ -8,12 +8,11 @@ axios.interceptors.request.use(function(config) {
 })
 
 // 拦截响应
-axios.interceptors.response.use(function(config) {
+axios.interceptors.response.use(function(response) {
     setTimeout(() => {
         Toast.hide();
     }, 2000)
-    return config;
+    return response;
 })
 
-// TODO: 在拦截器中对后端返回的状态代码做统一处理 以及超时的处理?
-// FIXME: 测试
+// TODO: 在拦截器中对后端返回的状态代码做统一处理 以及超时的处理
